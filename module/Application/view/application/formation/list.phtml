@@ -1,0 +1,16 @@
+<h2>Liste des formations :</h2>
+<?php if($this->flashMessenger()->hasMessages()) : ?>
+<p><?php echo $this->flashMessenger()->getMessages()[0]; ?></p>
+<?php endif; ?>
+<p><a href="">Ajouter une formation</a></p>
+<table>
+    <?php foreach($formations as $f) : ?>
+    <?php /* @var $f Application_Model_Formation */ ?>
+    <tr>
+        <td><?php echo $f->getNom(); ?></td>
+        <td><a href="">Détails</a></td>
+        <td><a href="">Modifier</a></td>
+        <td><a href="">Supprimer</a></td>
+    </tr>
+    <?php endforeach; ?>
+</table>
